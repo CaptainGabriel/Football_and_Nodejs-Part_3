@@ -1,0 +1,30 @@
+<h1 class="text-center">Group "{{groupName}}"</h1>
+<div class="compact">
+  {{#each teams}}
+  <div class="team_container">
+    <!-- call the handler to build the correct link -->
+    <div class="list-group-item group_team">
+    <i><b>{{team}}</b></i> ({{leagueCode}}) from <i>{{league}}</i>
+    </div>
+
+    <br>
+    
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="next_fix">Next Fixtures</label>
+        <input type="text" class="form-control next_fix_input" id="next_fix">
+      </div>
+      <div class="form-group">
+        <label for="last_fix">Last Fixtures</label>
+        <input type="text" class="form-control last_fix_input" id="last_fix">
+      </div>
+      <button type="submit" class="btn btn-default the_show_button">
+        Show
+      </button>
+    </form>
+    
+    <br>
+  
+  </div>
+  {{/each}}
+</div>

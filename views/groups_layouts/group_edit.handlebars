@@ -1,0 +1,83 @@
+<div class="compact">
+    <h2 class="text-center" id="old_group_name">{{groupName}}</h2>
+    <br>
+    <form method='POST' class="form-horizontal" id="submit_form">
+        <!-- list of teams already present on the group -->
+        <div class='form-group'>
+            <div class="col-md-9 col-md-offset-3">
+                <!-- info message -->
+                <div id="profile-edit-group-view-info1-div">
+                    <small>Teams already present, press
+                    <span class="glyphicon glyphicon-remove"></span>
+                    to remove all the selected
+                    </small>
+                </div>
+                <!-- -->
+                {{#each teams}}
+                <div class="btn-group btn-lg" id="team_div">
+                    <button class="btn btn-default btn-edit-team">
+                        <i><b>{{team}}</b></i> - <i>{{league}} ({{leagueCode}})</i>
+                    </button>
+                    <!-- remove button -->
+                    <div class="input-group-btn">
+                        <span>
+                        <button class="btn btn-danger btn-edit-remove-team" id="btn-edit-remove-team">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- -->
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <!-- league selection -->
+        <div class='form-group'>
+            <label class="col-sm-3 control-label">League: </label>
+            <div class="col-sm-7">
+                <select type="text" name="league_selector" id="league_selector" class='form-control'>
+                    <option selected disabled>choose a league</option>
+                    {{#each leagueCaption}}
+                    <option>
+                        {{caption}} ({{leagueCode}})
+                    </option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        <!-- team selection -->
+        <div class='form-group'>
+            <label class="col-sm-3 control-label">Team: </label>
+            <div class="col-sm-7">
+                <select type="text" name="team_selector" id="team_selector" value="" class='form-control'>
+                    <option selected disabled>choose a team</option>
+                </select>
+            </div>
+        </div>
+        <!-- '+' '-' buttons and info message -->
+        <div class='form-group'>
+            <div class="col-md-7 col-md-offset-3">
+                <button class="btn btn-success" id="profile-edit-group-view-add-team-button" type="button">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+                <button class="btn btn-danger btn-remove" type="button">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </button>
+                <small>Press <span class="glyphicon glyphicon-plus gs"></span>
+                  to add this team or <span class="glyphicon glyphicon-minus gs"></span>
+                  to remove all
+                </small>
+            </div>
+        </div>
+        <br>
+        <!-- submit button -->
+        <div class='form-group'>
+            <div class="col-md-7 col-md-offset-3">
+                <input type="submit" id="profile-edit-group-view-submit-button" class='btn btn-primary' />
+            </div>
+        </div>
+        <!-- -->
+    </form>
+</div>
+
+

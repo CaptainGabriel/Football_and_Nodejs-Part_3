@@ -1,0 +1,11 @@
+<h1 class="text-center">{{description}}</h1>
+
+<div class="compact">
+{{#each soccerLeagues}}
+      <a href="/leagues/{{league}}" class="list-group-item ahover">{{caption}}
+      <!-- Aparecem na ordem contrária à definida --> 
+      <span class="badge">{{numberOfGames}}</span>
+      <span class="badge">{{numberOfTeams}}</span>
+    </a>
+{{/each}}
+</div>  

@@ -1,0 +1,37 @@
+<div class="container">
+    {{#if noInvites}}
+    <h3 align="center">You don't have any invites pending</h3>
+    {{/if}}
+    {{#each invites}}
+    <div class='profile-invites-view-invite-div'>
+        <span class="user-profiles-list-basic center-block">
+        <span>
+            <a href="#" class="user-avatar">
+                <img src="http://gravatar.com/avatar/{{calcHash this.from.email}}?d=mm"
+                width="80" alt="Profile of {{this.from.username}}" />
+            </a>
+            <p>
+                <a href="" id="username">{{this.from.username}}</a>
+            </p>
+            <samp><small>invited you to <b id="groupname">{{this.group}}</b></small></samp>
+            <br>
+            <samp><small>with <b id="permission">{{this.permissionGranted}}</b> permissions</small></samp>
+        </span>
+        </span>
+            <!-- buttons to accept/decline the invite -->
+            <div class='col-md-7 col-md-offset-4'>
+                <button class="btn btn-success profile-invites-view-accept-button" type="button">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </button>
+                <button class="btn btn-danger profile-invites-view-decline-button" type="button">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+                <small>Press <span class="glyphicon glyphicon-plus gs"></span>
+                  to accept this invite or <span class="glyphicon glyphicon-minus gs"></span>
+                  decline
+                </small>
+            </div>
+            <!-- -->
+    </div>
+    {{/each}}
+</div>

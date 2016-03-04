@@ -1,0 +1,28 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-6">
+            <img class="img_left logo" src="{{team.crestUrl}}" alt="team logo" style="width:220px;height:180px;"/>
+        </div>
+        <div class="col-xs-6">
+            <ul>
+                <li>
+                    <b>
+                        {{team.name}}
+                    </b>
+                    {{#if team.code}}
+                        ({{team.code}})
+                    {{/if}}
+                </li>
+                {{#if team.shortName}}
+                    <li>
+                        Short Name: {{team.shortName}}
+                    </li>
+                {{/if}}
+                <li>
+                    Squad Market Value: {{team.squadMarketValue}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

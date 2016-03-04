@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3 ">
+        <h2 class="text-center">List of Groups</h2>
+        {{#unless groups}}
+            <h3 align="center">No groups to show</h3>
+        {{/unless}}
+        <div class="container control-group">
+            {{#each groups}}
+            <div class="btn-group btn-group-justified margin_sides col-xs-8" id="group_div">
+                <a class="btn btn-default" id="group" href="/groups/{{_id}}">{{name}}</a>
+            </div>
+            <p class="pull-right"><small>created by "{{this.master}}"</small></p>
+            {{/each}}
+        </div>
+        <a href="/groups/new" class="btn btn-primary btn-success margin_sides">
+            <span class="glyphicon glyphicon-pencil"></span> Create New
+        </a>
+    </div>
+</div>

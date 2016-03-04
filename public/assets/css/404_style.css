@@ -1,0 +1,24 @@
+@import url(http://fonts.googleapis.com/css?family=Bree+Serif|Source+Sans+Pro:300,400);
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.bree-font{
+  font-family: 'Bree Serif', serif;
+}
+
+.enormous-font{
+  font-size: 10em;
+  margin-bottom: 0em;
+}
+.big-font{
+  font-size: 2em;
+}
+
+#content{
+  margin: 0 auto;
+  width: 960px;
+}

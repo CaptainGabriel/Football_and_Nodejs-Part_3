@@ -1,0 +1,64 @@
+<span class="user-profiles-list-basic center-block">
+    <span>
+        <a href="#" class="user-avatar">
+            <img src="http://gravatar.com/avatar/{{calcHash user.email}}?d=mm"
+            width="80" alt="Profile of {{user.username}}" />
+        </a>
+        <p>
+            <a href="">{{user.username}}</a>
+        </p>
+        <small><i>{{user.email}}</i></small>
+    </span>
+</span>
+<div class="container">
+    {{#if user.groups}}
+        <h3>Groups you created</h3>
+    {{/if}}
+    {{#each user.groups}}
+    <div style="width: 50%; margin: 10px;" class="btn-group btn-group-justified margin_sides profile-groups-view-group-div">
+        <div class="btn btn-default profile-groups-view-group-a">
+          {{this}}
+        </div>
+        <!-- edit, remove and edit buttons -->
+        <div class="input-group-btn">
+            <span>
+                <button class="btn btn-warning  btn-edit-team"
+                    onclick="window.location.href= window.location.href +'/groups/{{this}}/edit'">
+                    <span class="glyphicon glyphicon-edit"></span>
+                </button>
+            </span>
+            <span>
+                <button class="btn btn-danger profile_view_remove_group">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </span>
+            <span>
+                <button class="btn btn-info profile_view_invite_group">
+                    <span class="glyphicon glyphicon-cog"></span>
+                </button>
+            </span>
+        </div>
+        <!-- -->
+    </div>
+    {{/each}}
+    {{#if writeGroups}}
+        <h3>Other users' groups you can edit</h3>
+    {{/if}}
+    {{#each writeGroups}}
+    <div style="width: 50%; margin: 10px;" class="btn-group btn-group-justified margin_sides profile-groups-view-group-div">
+        <a class="btn btn-default profile-groups-view-group-a" href="/profile/groups/{{this.name}}">
+          {{this.name}}
+        </a>
+        <!-- edit, remove and edit buttons -->
+        <div class="input-group-btn">
+            <span>
+                <button class="btn btn-warning btn-edit-team"
+                    onclick="window.location.href= window.location.href +'/groups/{{this.name}}/edit'">
+                    <span class="glyphicon glyphicon-edit"></span>
+                </button>
+            </span>
+        </div>
+        <!-- -->
+    </div>
+    {{/each}}    
+</div>

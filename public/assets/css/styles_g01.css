@@ -1,0 +1,100 @@
+h1 {
+    font-family: "Lucida Grande", "Georgia";
+    padding-bottom: 20px;
+}
+
+p {
+    font-family: "Lucida Sans";
+}
+
+.btn-disable {
+    display:inline-block;
+    pointer-events: none;
+}
+
+.space_top {
+    margin-top: 130px;
+}
+
+.list_no_style {
+    list-style: none outside none;
+}
+
+.list_style {
+    padding-left: 20px;
+    list-style: circle inside;
+}
+
+.img_left {
+    float: right;
+}
+
+.logo {
+    border: solid medium black;
+}
+
+.margin_sides {
+  margin: 10px 10px;
+}
+
+.right{
+  float: right;
+}
+
+.compact {
+    margin: auto 100px;
+    /*
+    margin-left: 80px;
+    margin-right: 80px;
+     */
+}
+
+.center_block{
+
+    float: none;
+    margin: 0 auto;
+}
+
+
+.fixture_details{
+    padding-bottom: 10px;
+}
+
+
+/*
+Login Form styles
+*/
+
+.form-signin, .form-signup{
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signup .text-box{
+  margin-bottom: 10px;
+  margin-top: 5px;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  {{#if use404Styles}}
+    <link type="text/css" rel="stylesheet" href="/assets/css/404_style.css" /> 
+  {{/if}}
+  <link type="text/css" rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="/assets/css/styles_g01.css" />
+  <link type="text/css" rel="stylesheet" href="/assets/css/user_profile_card.css" />
+</head>
+
+<body class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <!-- The Hamburger pattern -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">LI51D-G01</span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul id="nav_with_active_buttons" class="nav navbar-nav">
+          <li class="active">
+            <a href="/">
+              <span class="glyphicon glyphicon-home"></span> Home
+            </a>
+          </li>
+          <li>
+            <a href="/leagues">
+              <span class="glyphicon glyphicon-sunglasses"></span> Leagues
+            </a>
+          </li>
+          <li>
+            <a href="/groups/">
+              <span class="glyphicon glyphicon-heart"></span>
+              Groups
+            </a>
+          </li>
+          <li>
+            {{#if user}}
+              <a href="/profile">
+                <span class="glyphicon glyphicon-console"></span>
+                Profile
+              </a>
+            {{else}}
+              <a href="/account/login">
+                <span class="glyphicon glyphicon-console"></span>
+                Login
+              </a>
+            {{/if}}
+          </li>
+        </ul>
+        {{#if user}}
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/profile/invites/show">
+            <span class="glyphicon glyphicon-envelope"/>
+            </a>
+          </li>
+          <li>
+            <a href="/profile">
+              <span class="glyphicon glyphicon-user"></span>
+              {{user.username}}
+            </a>
+          </li>
+          <li>
+            <a href="/account/logout">
+              <span class="glyphicon glyphicon-off"></span>
+              Log Out
+            </a>
+          </li>
+        </ul>
+        {{/if}}
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <div class="space_top">
+    <div class="jumbotron container">
+      {{{body}}}
+    </div>
+  </div>
+
+  <!--scripts-->
+  <script src="/assets/js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="/assets/js/client_side_g01.js"></script>
+  <script type="text/javascript" src="/assets/js/add_permissions.js"></script>
+  <script type="text/javascript" src="/assets/js/client-scripts/invites-script.js"></script>
+</body>
+
+</html>

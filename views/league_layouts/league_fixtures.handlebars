@@ -1,0 +1,32 @@
+<div class="container">
+    <h2 class="text-center">{{description}}</h2>
+    {{#each fixtures as |value key|}}
+        <h3>
+            Week {{key}}
+        </h3>
+        <div class="table-responsive">
+            <table class="center_content table table-striped table-bordered table-condensed">
+                <thead>
+                <tr>
+                    <th class="text-center">Date</th>
+                    <th class="text-center">Home</th>
+                    <th class="text-center">Score</th>
+                    <th class="text-center">Away</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each value }}
+                    {{#with this}}
+                    <tr class="text-center">
+                        <td>{{dateHandler date}}</td>
+                        <td>{{home_team_name}}</td>
+                        <td>{{validateGoals result.goalsHomeTeam}} - {{ validateGoals result.goalsAwayTeam}}</td>
+                        <td>{{away_team_name}}</td>
+                    </tr>
+                    {{/with}}
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    {{/each}}
+</div>

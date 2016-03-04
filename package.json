@@ -1,0 +1,47 @@
+{
+  "name": "trabalho_2",
+  "version": "1.0.0",
+  "description": "Projecto Express.js para trabalho practico numero 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isel-leic-pi/LI51D-G01.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "pi",
+    "isel"
+  ],
+  "author": "51D-G01",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isel-leic-pi/LI51D-G01/issues"
+  },
+  "homepage": "https://github.com/isel-leic-pi/LI51D-G01#readme",
+  "dependencies": {
+    "async": "^1.5.0",
+    "body-parser": "^1.14.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.1",
+    "debug": "^2.2.0",
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1",
+    "express-session": "^1.13.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-mocha": "^2.2.0",
+    "gulp-util": "^3.0.7",
+    "mocha": "^2.3.4",
+    "supertest": "^1.1.0"
+  }
+}
