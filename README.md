@@ -17,7 +17,7 @@ Let's traverse the new functionalities and explain briefly how we did it.
 
 #### Authentication and Login
 
-To deal with this funtionality we added to our dependencies a module named _**"Passport.js"**_. This module gives us the possibility to accept more than one way of dealing with user's authentication just by adding the specific logic that proves that some user is in fact in possess of valid credentials. This various ways are called "_strategies_". Depending on the one we use our app might be able to handle different forms of authentication. In this case we just use the [Local Stategy](https://github.com/jaredhanson/passport-local#passport-local).Its important to say that we are aware that the way we store passwords is wrong but this was not something important to us during the development of this app. Getting to know the module was far more important.
+To deal with this funtionality we added to our dependencies a module named _**"Passport.js"**_. This module gives us the possibility to accept more than one way of dealing with user's authentication just by adding the specific logic that proves that some user has valid credentials. This various ways are called "_strategies_". Depending on the one we use our app might be able to handle different forms of authentication. In this case we just use the [Local Stategy](https://github.com/jaredhanson/passport-local#passport-local).Its important to say that we are aware that the way we store passwords is wrong but this was not something important to us during the development of this app. Getting to know the module was far more important.
 
 The main logic implemented inside the local strategy is just making sure the password and username given through the login form belong to some user known to us.
 
