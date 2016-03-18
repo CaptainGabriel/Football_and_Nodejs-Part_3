@@ -20,19 +20,6 @@ const optionsHeaders = {
 };
 
 /**
- * Used when performing requests to the api. It makes
- * use of our api key.
- */
-function OptionsApi(url) {
-    this.protocol = url.protocol || 'http:';
-    this.hostname = url.hostname;
-    this.port = url.port || 80;
-    this.method = url.method || 'GET';
-    this.path = url.pathname || '/';
-    this.headers = optionsHeaders;
-}
-
-/**
  * A more generic approach for when performing requests.
  * Headers need to be set afterwards.
  */
@@ -46,50 +33,6 @@ function Options(p, m) {
 module.exports.Options = function(path, method) {
     return new Options(path, method);
 };
-
-
-/**
- * This function has the purpose of generify the code
- * in order to request any endpoint given as parameter.
- */
-function requestEndpoint(endpointUri, callback) {
-
-    const mainApiUrl = url.parse(endpointUri);
-    const options = new OptionsApi(mainApiUrl);
-
-    let req = http.request(options, (res) => {
-        if (res.statusCode >= 500 && res.statusCode <= 505) {
-            return callback(new Error('Server Error'));
-        }
-        if (res.statusCode !== 200) {
-            return callback({
-                badStatus: res.statusCode
-            });
-        }
-
-        res.setEncoding('utf8');
-        let chunks = [];
-
-        res.on("data", (chunk) => chunks.push(chunk));
-        res.on('error', callback);
-        res.on("end", () => {
-            let parsedjson;
-            try {
-                parsedjson = JSON.parse(chunks.join(" "));
-            } catch (error) {
-                return callback(error);
-            }
-            if (parsedjson) {
-                callback(null, parsedjson);
-            }
-        });
-    });
-    req.on('error', callback);
-    req.end();
-}
-module.exports.requestEndpoint = requestEndpoint;
-
-
 
 
 //Created to be used in tests
@@ -135,7 +78,6 @@ module.exports.requestWithOptions = function(options, objData, callback) {
  *
  */
 module.exports.sendRequest = function(opts, callback, toWrite) {
-    console.log(opts)
     const request = http.request(opts, (resp) => {
         let result = '';
         resp.on('error', callback);
@@ -144,14 +86,14 @@ module.exports.sendRequest = function(opts, callback, toWrite) {
             if (checkResponse(result)) {
                 return callback(null, null);
             }
-            let parsedjson;
+            let parsedJson;
             try {
-                parsedjson = JSON.parse(result);
+                parsedJson = JSON.parse(result);
             } catch (error) {
                 return callback(error);
             }
-            if (parsedjson) {
-                return callback(null, parsedjson);
+            if (parsedJson) {
+                return callback(null, parsedJson);
             }
         });
     });

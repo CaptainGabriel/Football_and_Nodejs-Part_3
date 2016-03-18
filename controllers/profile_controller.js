@@ -20,8 +20,6 @@ const mainApiEndpoint = require('../utils/utils').mainUrlEndpoint;
 
 //the ctor function from the model
 const Invite = require("./../db_mappers/models/invite_model").Invite;
-//the ctor function from the model
-const Group = require('./../db_mappers/models/group_model').Group;
 
 /**
  * The handler of the route '/profile/'.
@@ -32,7 +30,7 @@ function rootHandler(req, res, next) {
             //do something
             next(err);
         }
-        //groups this user and write acess to
+        //groups this user and write access to
         let writeGroups = [];
         let currUser = req.user.username;
         groups.forEach((group) => {

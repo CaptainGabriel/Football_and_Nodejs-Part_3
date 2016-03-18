@@ -47,7 +47,7 @@ function handleSignUpForm(req, res, next) {
                     return next(err);
                 }
                 console.log(`User created with the id: ${result.id}`);
-                res.redirect(201, '/account/login');
+                res.redirect(303, '/account/login');
             });
         }
     });

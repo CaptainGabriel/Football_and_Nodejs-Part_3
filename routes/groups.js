@@ -1,6 +1,5 @@
 'use strict';
 
-
 const express = require('express');
 
 const groupMapper = require('./../db_mappers/group_mapper');
@@ -13,19 +12,6 @@ router.use(bodyParser.urlencoded({
 }));
 router.use(bodyParser.json());
 
-
-//request module
-const requestResource = require('../utils/request').requestEndpoint;
-
-/**
- * When requesting all seasons/leagues, use this url.
- */
-const mainApiEndpoint = require('../utils/utils').mainUrlEndpoint;
-
-/*
- * Contains the caption of all the leagues available
- */
-let leaguesCache = [];
 
 //The controllers
 const authController = require('../controllers/auth_controller');

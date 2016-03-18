@@ -5,9 +5,6 @@
  */
 "use strict";
 
-/**
- * TODO
- */
 function removeSpaces(name) {
     if (name !== undefined) {
         return name.replace(/\s/g, "");
@@ -15,9 +12,6 @@ function removeSpaces(name) {
     return name;
 }
 
-/**
- * TODO
- */
 function dateHandler(rawdate) {
     //expecting -> 2015-08-1T18:30:00Z
     if (!rawdate) {
@@ -32,9 +26,6 @@ function dateHandler(rawdate) {
     return readableDate;
 }
 
-/**
- * TODO
- */
 function validateGoals(goals) {
     if (goals && goals >= 0) {
         return '' + goals;
@@ -43,9 +34,6 @@ function validateGoals(goals) {
     }
 }
 
-/**
- * TODO
- */
 function linkToProperUser(loggedUsername, contextGroup) {
     //if the logged user is not the master of the group, he can only watch
     if (loggedUsername !== contextGroup.master) {
@@ -56,9 +44,7 @@ function linkToProperUser(loggedUsername, contextGroup) {
     }
 }
 
-/**
- * TODO
- */
+
 function calcHash(str) {
     return require('crypto').createHash('md5').update(str).digest("hex");
 }
